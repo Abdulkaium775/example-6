@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple project</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+    <header class=" w-11/12 mx-auto bg-gradient-to-r from-[#FCFCFC] via-[#ECECEC] to-[#FCFCFC] mb-10">
+
+        <!-- navbar -->
+        <nav class="flex justify-between items-center p-6 ">
+            <div class="flex w-8">
+                <h1 class="font-bold">English</h1>
+                <img src="./assets/logo.png" alt="">
+                <h1 class="font-bold">জানালা</h1>
+            </div>
+            <div class=" flex justify-between items-center gap-4">
+               
+                <button class=" flex justify-center items-center gap-1 hover:bg-[#422AD5] hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm object-cover border-1 border-[#422AD5]">
+                    <img class="w-full h-full object-cover hover:text-white" src="./assets/fa-circle-question.png" alt=""><span class="w-full h-full object-cover">FAQ</span></button>
+
+                    <button class=" flex justify-center items-center gap-1 hover:bg-[#422AD5] hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm object-cover border-1 border-[#422AD5]">
+                        <img class="w-full h-full object-cover hover:text-white" src="./assets/fa-book-open.png" alt=""><span class="w-full h-full object-cover">Learn</span></button>
+
+                        <button class=" flex justify-center items-center gap-1 hover:bg-[#422AD5] hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm object-cover border-1 border-[#422AD5]">
+                            <img class="w-full h-full object-cover hover:text-white" src="./assets/fa-circle-question.png" alt=""><span class="w-full h-full object-cover">Logout</span></button>
+            </div>
+        </nav>
+    </header>
+    <main class="w-11/12 mx-auto mb-10">
+        <!-- banner-section -->
+         <section class="flex justify-between items-center mb-10 bg-gradient-to-t">
+            <div class="space-y-3">
+                <h1 class="text-3xl font-bold "><span class="text-[#00BCFF]">English</span> is Easy!!</h1>
+                <p>আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+                <fieldset class="flex flex-col gap-3">
+                    <input type="email" class="input" placeholder="Enter Your Name " />
+                    <input type="password" class="input" placeholder="..........." />
+                   <button class="w-1/9 text-white rounded-sm bg-[#422AD5] p-1">Get Start</button>
+                  </fieldset>
+            </div>
+          
+            <div>
+                <img src="./assets/hero-student.png" alt="">
+            </div>
+         </section>
+         <section class="mb-10">
+           <!-- Let's Learn Vocabularies -->
+           <div class="mb-20">
+            <h1 class="text-5xl font-bold text-center"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h1>
+         </div>
+
+
+         <div class="bg-[#F8F8F8] text-center space-y-2 p-4">
+            <p class="text-sm">আপনি এখনো কোন Lesson Select করেন </p>
+            <h1 class="text-3xl">একটি Lesson Select করুন।</h1>
+         </div>
+        </section>
+
+        <section>
+        <!-- Frequently Asked Questions -->
+         <h1 class="text-4xl font-bold text-center"><span class="text-[#00BCFF]">Frequently</span> Asked Questions</h1>
+
+         <div class="collapse collapse-plus bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-3" checked="checked" />
+            <div class="collapse-title font-semibold">1. How can I start learning English on this website?</div>
+            <div class="collapse-content text-sm">To start learning English on this website (assuming you are referring to the website you are currently on), you should explore the available resources and materials, which may include lessons, exercises, vocabulary lists, and interactive tools, tailored for different proficiency levels.</div>
+          </div>
+          <div class="collapse collapse-plus bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold">2. Is this website free to use?</div>
+            <div class="collapse-content text-sm">Check a website - Use our free website scam checker tool to check if a website is unsafe or a scam before visiting. No sign up required.</div>
+          </div>
+          <div class="collapse collapse-plus bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold">3.  Do I need to create an account?</div>
+            <div class="collapse-content text-sm">Yes, to access and utilize the services you're interested in, you will need to create an account. You can do this by going to the relevant website or app, and following the instructions to register. </div>
+          </div>
+          <div class="collapse collapse-plus bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold">4. How can I build my English vocabulary?</div>
+            <div class="collapse-content text-sm">To build your English vocabulary, engage in regular reading, practice writing, use a dictionary and thesaurus, learn new words in context, and play word games to make it fun and interactive.</div>
+          </div>
+          <div class="collapse collapse-plus bg-base-100 border border-base-300">
+            <input type="radio" name="my-accordion-3" />
+            <div class="collapse-title font-semibold">5. Do you offer certificates for completed courses?</div>
+            <div class="collapse-content text-sm">A certificate program is a specialized education designed to develop or strengthen specific career skills. A certificate program is considered continuing education in some cases because it builds on your knowledge of a particular career or industry.</div>
+          </div>
+        </section>
+
+    </main>
+ <div class="border-1 border-[#FFEDED]"></div>
+    <!-- footer -->
+        <footer class="w-11/12 mx-auto">
+            <section class="flex justify-between items-center p-10 ">
+                <nav class="w-fulln h-full object-cover">
+                    <div class="flex w-8">
+                        <h1 class="font-bold">English</h1>
+                        <img src="./assets/logo.png" alt="">
+                        <h1 class="font-bold">জানালা</h1>
+                    </div>
+                    <h1 class="font-bold">ইংরেজি শিখুন সহজে</h1>
+                    <p>Providing ED-Tech Applications since 2025</p>
+            </nav>
+        
+            <nav class="w-fulln h-full object-cover">
+              <h6 class="footer-title">Follow us</h6>
+              <div class="grid grid-flow-col gap-4">
+                <a>
+          <img src="./assets/fb-thumb.png" alt="">
+                </a>
+                <a>
+              <img src="./assets/youtube-thumb.png" alt="">
+                </a>
+                <a>
+               <img src="./assets/instagram-thumb.png" alt="">
+                </a>
+              </div>
+            </nav>
+        </section>
+        </footer>
+</body>
+</html>
