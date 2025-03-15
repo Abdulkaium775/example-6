@@ -7,6 +7,16 @@
 
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+    
+    #hiddenSection{
+        display: none;
+    }
+    #hiddenSection2{
+        display:none;
+    }
+</style>
 
 </head>
 <body>
@@ -21,14 +31,18 @@
             </div>
             <div class=" flex justify-between items-center gap-4">
                
-                <button class=" flex justify-center items-center gap-1 hover:bg-[#422AD5] hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm object-cover border-1 border-[#422AD5]">
-                    <img class="w-full h-full object-cover hover:text-white" src="./assets/fa-circle-question.png" alt=""><span class="w-full h-full object-cover">FAQ</span></button>
+                <button id="showButton" class="flex gap-1 justify-center items-center hover:bg-[#422AD5]  w-full h-full object-cover
+                 hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm  border-1 border-[#422AD5]">
+                    <i class=" fa-solid fa-question"></i>FAQ</button>
 
-                    <button class=" flex justify-center items-center gap-1 hover:bg-[#422AD5] hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm object-cover border-1 border-[#422AD5]">
-                        <img class="w-full h-full object-cover hover:text-white" src="./assets/fa-book-open.png" alt=""><span class="w-full h-full object-cover">Learn</span></button>
+                    <button id="showButton2" class="flex gap-1 items-center hover:bg-[#422AD5]  w-full h-full object-cover
+                    hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm  border-1 border-[#422AD5]">
+                       <i class="fa-solid fa-book-open"></i>Learn</button>
 
-                        <button class=" flex justify-center items-center gap-1 hover:bg-[#422AD5] hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm object-cover border-1 border-[#422AD5]">
-                            <img class="w-full h-full object-cover hover:text-white" src="./assets/fa-circle-question.png" alt=""><span class="w-full h-full object-cover">Logout</span></button>
+                       <button class="flex gap-1 justify-center items-center hover:bg-[#422AD5]  w-full h-full object-cover
+                       hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm  border-1 border-[#422AD5]">
+                       <i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+                
             </div>
         </nav>
     </header>
@@ -49,7 +63,7 @@
                 <img src="./assets/hero-student.png" alt="">
             </div>
          </section>
-         <section class="mb-10">
+         <section id="hiddenSection2" class="mb-10">
            <!-- Let's Learn Vocabularies -->
            <div class="mb-20">
             <h1 class="text-5xl font-bold text-center"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h1>
@@ -62,9 +76,10 @@
          </div>
         </section>
 
-        <section>
+
+        <section id="hiddenSection">
         <!-- Frequently Asked Questions -->
-         <h1 class="text-4xl font-bold text-center"><span class="text-[#00BCFF]">Frequently</span> Asked Questions</h1>
+         <h1 class="text-4xl font-bold text-center mb-5"><span class="text-[#00BCFF]">Frequently</span> Asked Questions</h1>
 
          <div class="collapse collapse-plus bg-base-100 border border-base-300">
             <input type="radio" name="my-accordion-3" checked="checked" />
@@ -124,5 +139,32 @@
             </nav>
         </section>
         </footer>
+        <script>
+                document.getElementById("showButton").addEventListener("click", function() {
+                const section = document.getElementById("hiddenSection");
+                if (section.style.display === "none") {
+                    section.style.display = "block"; 
+             
+                } 
+                else {
+                    section.style.display = "none"; 
+              
+                }
+            });
+
+
+
+            document.getElementById("showButton2").addEventListener("click", function() {
+                var section = document.getElementById("hiddenSection2");
+                if (section.style.display === "none") {
+                    section.style.display = "block"; 
+             
+                } 
+                else {
+                    section.style.display = "none"; 
+              
+                }
+            });
+        </script>
 </body>
 </html>
