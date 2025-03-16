@@ -8,15 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<!-- <style>
-    
-    #hiddenSection{
-        display: none;
-    }
-    #hiddenSection2{
-        display:none;
-    }
-</style> -->
+<style>
+.active {
+    background-color:blue;
+    color: white;
+}
+</style>
 
 </head>
 <body>
@@ -39,11 +36,11 @@
                     hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm  border-1 border-[#422AD5]">
                        <i class="fa-solid fa-book-open"></i>Learn</button>
 
-                       <button class="flex gap-1 justify-center items-center hover:bg-[#422AD5]  w-full h-full object-cover
+                       <button  class="flex gap-1 justify-center items-center hover:bg-[#422AD5]  w-full h-full object-cover
                        hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm  border-1 border-[#422AD5]">
                        <i class="fa-solid fa-right-from-bracket"></i>Logout</button>
                 
-            </div>
+            </div> 
         </nav>
     </header>
     <main class="w-11/12 mx-auto mb-10">
@@ -73,16 +70,16 @@
 
          </div>
 <!-- video -->
-         <div id="videoDiv" class="grid grid-cols-3 gap-3 bg-[#F8F8F8]">
+         <div id="videoDiv" class="grid grid-cols-3 gap-3">
 
          </div> 
-
 
          <div class="bg-[#F8F8F8] text-center space-y-2 p-4">
             <p class="text-sm">আপনি এখনো কোন Lesson Select করেন </p>
             <h1 class="text-3xl">একটি Lesson Select করুন।</h1>
          </div>
         </section>
+
 
 
         <section id="hiddenSection">
