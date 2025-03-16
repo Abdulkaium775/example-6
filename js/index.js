@@ -32,6 +32,7 @@ function removeBtn() {
   }
 }
 
+
 // some video
 function loadVideos(id) {
   const url=`https://openapi.programming-hero.com/api/level/${id}`
@@ -54,6 +55,11 @@ function loadVideos(id) {
     displayVideos(data.data)
   });
 };
+
+
+
+
+
 
 
 
@@ -147,7 +153,7 @@ const displayVideos = (videos) => {
                 <p class="font-semibold">Meaning / Pronunciation</p>
                 <p class="font-bold">${element.meaning} <span class="font-bold">/</span> ${element.pronunciation} </p>
               </div>
-              <div class="card-actions justify-between px-4">
+              <div class="card-actions justify-between px-6">
                 <button onclick="videoDetails('${btn.word}')" class="btn bg-[#E8F4FF]"><i class="fa-solid fa-circle-info"></i></button>
                 <button class="btn bg-[#E8F4FF]"><i class="fa-solid fa-volume-high"></i></button>
               </div>
@@ -166,30 +172,59 @@ const videoDetails = (detailsId) => {
   .then ((data) => displayVideoDetails(data.data))
 };
 
-const displayVideoDetails = (details) =>{
-  document.getElementById("modal").showModal();
-  const totalDtelails = document.getElementById ("totalDtelails");
-    totalDtelails.innerHTML =`
-    <div class="card card-border bg-base-100 w-96">
-  <div class="card-body">
-    <h2 class="card-title">Eager (     :ইগার)</h2>
-    <p>আগ্রহী</p>
-      <p>Example</p>
-        <p>The kids were eager to open their gifts</p>
-          <p>সমার্থক শব্দ গুলো</p>
-              
-  <div class="space-x-2">
-        <button>Enthusiastic</button>
-        <button>excited</button>
-        <button>keen</button>
-  </div>
-          <button>Complete Learning</button>
-  </div>
-</div>
-    `
-  
+const displayVideoDetails = (details) => {
+  const modal = document.getElementById("modal")
+  modal.showModal();
+    const totalDetails = document.getElementById("totalDetails");
+    totalDetails.innerHTML = `
+      <div class="card card-border bg-base-100 w-96">
+        <div class="card-body">
+          <h2 class="card-title">'${details.word}' : ইগার</h2>
+          <p>আগ্রহী</p>
+          <p><strong>Example:</strong></p>
+          <p>The kids were eager to open their gifts</p>
+          <p><strong>সমার্থক শব্দ গুলো:</strong></p>
+                
+          <div class="space-x-2">
+            <button class="btn btn-primary">Enthusiastic</button>
+            <button class="btn btn-secondary">Excited</button>
+            <button class="btn btn-accent">Keen</button>
+          </div>
+          
+          <button class="btn btn-success mt-3">Complete Learning</button>
+        </div>
+      </div>
+    `;
 
-}
+ 
+    
+};
+
+
+
+// const displayVideoDetails = (details) =>{
+
+//   document.getElementById("modal").showModal();
+//   const totalDtelails = document.getElementById ("totalDtelails");
+//     totalDtelails.innerHTML =`
+//     <div class="card card-border bg-base-100 w-96">
+//   <div class="card-body">
+//     <h2 class="card-title">${details.word}     :ইগার)</h2>
+//     <p>আগ্রহী</p>
+//       <p>Example</p>
+//         <p>The kids were eager to open their gifts</p>
+//           <p>সমার্থক শব্দ গুলো</p>
+              
+//   <div class="space-x-2">
+//         <button>Enthusiastic</button>
+//         <button>excited</button>
+//         <button>keen</button>
+//   </div>
+//           <button>Complete Learning</button>
+//   </div>
+// </div>
+//     `
+// }
 
 
 
