@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<style>
+<!-- <style>
     
     #hiddenSection{
         display: none;
@@ -16,11 +16,11 @@
     #hiddenSection2{
         display:none;
     }
-</style>
+</style> -->
 
 </head>
 <body>
-    <header class=" w-11/12 mx-auto bg-gradient-to-r from-[#FCFCFC] via-[#ECECEC] to-[#FCFCFC] mb-10">
+    <header id="headerSection" class=" w-11/12 mx-auto bg-gradient-to-r from-[#FCFCFC] via-[#ECECEC] to-[#FCFCFC] mb-10">
 
         <!-- navbar -->
         <nav class="flex justify-between items-center p-6 ">
@@ -48,14 +48,14 @@
     </header>
     <main class="w-11/12 mx-auto mb-10">
         <!-- banner-section -->
-         <section class="flex justify-between items-center mb-10 bg-gradient-to-t">
+         <section id="bannerSection" class="flex justify-between items-center mb-10 bg-gradient-to-t">
             <div class="space-y-3">
                 <h1 class="text-3xl font-bold "><span class="text-[#00BCFF]">English</span> is Easy!!</h1>
                 <p>আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
                 <fieldset class="flex flex-col gap-3">
-                    <input type="email" class="input" placeholder="Enter Your Name " />
-                    <input type="password" class="input" placeholder="..........." />
-                   <button class="w-1/9 text-white rounded-sm bg-[#422AD5] p-1">Get Start</button>
+                    <input id="input1" value="text" type="email" class="input" placeholder="Enter Your Name " />
+                    <input id="input2" type="password" class="input" placeholder="..........." />
+                   <button id="showBtn" class="w-1/9 text-white rounded-sm bg-[#422AD5] p-1">Get Start</button>
                   </fieldset>
             </div>
           
@@ -63,11 +63,19 @@
                 <img src="./assets/hero-student.png" alt="">
             </div>
          </section>
-         <section id="hiddenSection2" class="mb-10">
+         <section id="hiddenSection2" class="mb-28">
            <!-- Let's Learn Vocabularies -->
-           <div class="mb-20">
+           <div class="mb-10">
             <h1 class="text-5xl font-bold text-center"><span class="text-[#00BCFF]">Let's</span> Learn Vocabularies</h1>
          </div>
+<!-- button -->
+         <div id="buttonDiv" class="flex justify-center items-center gap-3 mb-8 ">
+
+         </div>
+<!-- video -->
+         <div id="videoDiv" class="grid grid-cols-3 gap-3 bg-[#F8F8F8]">
+
+         </div> 
 
 
          <div class="bg-[#F8F8F8] text-center space-y-2 p-4">
@@ -111,7 +119,7 @@
     </main>
  <div class="border-1 border-[#FFEDED]"></div>
     <!-- footer -->
-        <footer class="w-11/12 mx-auto">
+        <footer id="footerSection" class="w-11/12 mx-auto">
             <section class="flex justify-between items-center p-10 ">
                 <nav class="w-fulln h-full object-cover">
                     <div class="flex w-8">
@@ -125,7 +133,7 @@
         
             <nav class="w-fulln h-full object-cover">
               <h6 class="footer-title">Follow us</h6>
-              <div class="grid grid-flow-col gap-4">
+              <div class="grid grid-cols-3 justify-center items-center gap-3">
                 <a>
           <img src="./assets/fb-thumb.png" alt="">
                 </a>
@@ -139,11 +147,20 @@
             </nav>
         </section>
         </footer>
-        <script>
+        <!-- <script> -->
+           const headerSection= document.getElementById('headerSection');
+           headerSection.style.display="none";
+           const bannerSection= document.getElementById ('bannerSection');
+            const section = document.getElementById("hiddenSection");
+            section.style.display="none";
+
                 document.getElementById("showButton").addEventListener("click", function() {
-                const section = document.getElementById("hiddenSection");
-                if (section.style.display === "none") {
+                
+                  if (section.style.display === "none") {
                     section.style.display = "block"; 
+                    section2.style.display="none";
+                    bannerSection.style.display="none";
+                    section.scrollIntoView({ behavior:"smooth"});
              
                 } 
                 else {
@@ -152,19 +169,45 @@
                 }
             });
 
-
+            const section2 = document.getElementById("hiddenSection2");
+            section2.style.display="none";
 
             document.getElementById("showButton2").addEventListener("click", function() {
-                var section = document.getElementById("hiddenSection2");
-                if (section.style.display === "none") {
-                    section.style.display = "block"; 
-             
-                } 
-                else {
-                    section.style.display = "none"; 
-              
-                }
-            });
-        </script>
+                
+                if (section2.style.display === "none") {
+                  section2.style.display = "block"; 
+                  section.style.display="none";
+                  bannerSection.style.display="none";
+                  section2.scrollIntoView({ behavior:"smooth"});
+           
+              } 
+              else {
+                  section2.style.display = "none"; 
+            
+              }
+          });
+
+        //   form
+        document.getElementById("showBtn").addEventListener("click", function () {
+    let input1 = document.getElementById('input1').value
+    let input2 = document.getElementById('input2').value
+    const convertInput2 = parseInt (input2)
+
+
+
+    if (input1 && convertInput2 === 123456) {
+            bannerSection.style.display="none";
+            section.style.display="block";
+            section2.style.display="block";
+            headerSection.style.display="block";
+
+    } else {
+        alert("Please fill both input fields correctly!");
+    }
+});
+
+
+        <!-- // </script> -->
+         <script src="js/index.js"></script>
 </body>
 </html>
