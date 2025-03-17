@@ -1,5 +1,7 @@
-// buttons
 
+document.getElementById('spiner').style.display = "none";
+
+// buttons>>>>>>>>>>>>>>>>>>>>.
 function loadButton() {
     fetch ("https://openapi.programming-hero.com/api/levels/all")
     .then((res)=>res.json())
@@ -24,7 +26,7 @@ function loadButton() {
 
 // }
 
-// remove button
+// remove button>>>>>>>>>>>>>>>>>.
 function removeBtn() {
   const activeBtn =document.getElementsByClassName("active")
   for (btn of activeBtn) {
@@ -33,8 +35,11 @@ function removeBtn() {
 }
 
 
-// some video
+// some fetch video>>>>>>>>>>>>>>>>>.
+
 function loadVideos(id) {
+  // show-spiner
+  show("spiner")
   const url=`https://openapi.programming-hero.com/api/level/${id}`
   fetch(url)
   .then((res)=>res.json())
@@ -43,26 +48,28 @@ function loadVideos(id) {
     removeBtn();
     // no active button
     let clickButton = document.getElementById(`btn-${id}`);
-    clickButton.classList.add('active');
-    console.log('clickButton');
-
+    clickButton?.classList?.add('active');
   //  extra section hide
-    let extraSection = document.getElementById('extraSection');
-    if (extraSection) {
-      extraSection.style.display = 'none';
+    document.getElementById('extraSection').style.display = 'none';
+// hide-spiner
+    if (data.data) {
+      displayVideos(data.data);
+      makeHide("spiner")
     }
-
-    displayVideos(data.data)
+    
   });
+ 
 };
 
+// spiner == html code 
+const makeHide = (id) => {
+  document.getElementById(id).style.display ="none";
+ }
+ const show =(id) => {
+  document.getElementById(id).style.display ="block";
+ }
 
-
-
-
-
-
-
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 function displayButton(buttons) {
     const buttonDiv = document.getElementById('buttonDiv');
     
@@ -117,7 +124,7 @@ function displayButton(buttons) {
 //     });
 // };
 
-
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 const toggleVideos = () => {
   const videoDiv = document.getElementById('videoDiv');
   
@@ -127,7 +134,6 @@ const toggleVideos = () => {
       videoDiv.classList.add('hidden'); 
   }
 };
-
 const displayVideos = (videos) => {
   const videoDiv = document.getElementById('videoDiv');
   videoDiv.innerHTML = "";
@@ -147,58 +153,58 @@ const displayVideos = (videos) => {
       const videoCard = document.createElement('div');
 
       videoCard.innerHTML = `
-           <div class="bg-white">
+           <div class="bg-white hover:bg-teal-100">
               <div class="card-body items-center">
                 <h2 class="card-title font-bold">${element.word}</h2>
                 <p class="font-semibold">Meaning / Pronunciation</p>
-                <p class="font-bold">${element.meaning} <span class="font-bold">/</span> ${element.pronunciation} </p>
+                <p class="font-bold">"${element.meaning?element.meaning:"অর্থ নাই"}" <span class="font-bold">/</span> ${element.pronunciation} </p>
               </div>
               <div class="card-actions justify-between px-6">
-                <button onclick="videoDetails('${btn.word}')" class="btn bg-[#E8F4FF]"><i class="fa-solid fa-circle-info"></i></button>
+                <button onclick="videoDetails('${element.id}')" class="btn bg-[#E8F4FF]"><i class="fa-solid fa-circle-info"></i></button>
                 <button class="btn bg-[#E8F4FF]"><i class="fa-solid fa-volume-high"></i></button>
               </div>
            </div>
       `;
-
-      videoDiv.appendChild(videoCard);
+    
+        videoDiv.appendChild(videoCard);
+        
   });
+ 
 };
 
-// videoDetails
-const videoDetails = (detailsId) => {
-  const url = `https://openapi.programming-hero.com/api/word/${detailsId} `
+// videoDetails>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ function videoDetails(detailsId) {
+  const url = `https://openapi.programming-hero.com/api/word/${detailsId}`
   fetch (url)
   .then ((res)=>res.json())
   .then ((data) => displayVideoDetails(data.data))
-};
+}
+// >>>>>
+function displayVideoDetails(detail) {
+  document.getElementById("modal").showModal();
 
-const displayVideoDetails = (details) => {
-  const modal = document.getElementById("modal")
-  modal.showModal();
-    const totalDetails = document.getElementById("totalDetails");
-    totalDetails.innerHTML = `
-      <div class="card card-border bg-base-100 w-96">
-        <div class="card-body">
-          <h2 class="card-title">'${details.word}' : ইগার</h2>
-          <p>আগ্রহী</p>
+  let details = document.getElementById("details");
+  details.innerHTML = `
+          <h2>${detail.word} (<i class="fa-solid fa-microphone"></i>):${detail.pronunciation}</h2>
+          <p><strong>Meaning:</strong></p>
+          <p>${detail.meaning}</p>
+        
           <p><strong>Example:</strong></p>
-          <p>The kids were eager to open their gifts</p>
+          <p>${detail.sentence}</p>
+   
           <p><strong>সমার্থক শব্দ গুলো:</strong></p>
-                
           <div class="space-x-2">
-            <button class="btn btn-primary">Enthusiastic</button>
-            <button class="btn btn-secondary">Excited</button>
-            <button class="btn btn-accent">Keen</button>
+             <button>${detail.synonyms[0]?detail.synonyms[0]:" "}</button>
+             <button>${detail.synonyms[1]?detail.synonyms[1]:" "}</button>
+             <button>${detail.synonyms[2]?detail.synonyms[2]:" "}</button>
           </div>
-          
-          <button class="btn btn-success mt-3">Complete Learning</button>
-        </div>
+          </div>
+          <button class="bg-[#422AD5] text-white p-2 rounded-sm">Complete Learning</button>
       </div>
     `;
+}
 
- 
-    
-};
+
 
 
 

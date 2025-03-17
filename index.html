@@ -13,11 +13,12 @@
     background-color:blue;
     color: white;
 }
+
 </style>
 
 </head>
 <body>
-    <header id="headerSection" class=" w-11/12 mx-auto bg-gradient-to-r from-[#FCFCFC] via-[#ECECEC] to-[#FCFCFC] mb-10">
+    <header id="headerSection" class=" w-11/12 mx-auto bg-gradient-to-r from-[#FCFCFC] via-[#ECECEC] to-[#FCFCFC] mb-9 sticky top-0 z-50">
 
         <!-- navbar -->
         <nav class="flex justify-between items-center p-6 ">
@@ -27,18 +28,19 @@
                 <h1 class="font-bold">জানালা</h1>
             </div>
             <div class=" flex justify-between items-center gap-4">
-               
-                <button id="showButton" class="flex gap-1 justify-center items-center hover:bg-[#422AD5]  w-full h-full object-cover
-                 hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm  border-1 border-[#422AD5]">
-                    <i class=" fa-solid fa-question"></i>FAQ</button>
+       
+          
+            <button  id="showButton"  class="flex gap-1 justify-center items-center hover:bg-[#422AD5]  w-full h-full object-cover
+            hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm  border-1 border-[#422AD5]">
+               <i class=" fa-solid fa-question"></i>FAQ</button>
+           
+                   <button id="showButton2"  class="flex gap-1 items-center hover:bg-[#422AD5]  w-full h-full object-cover
+                  hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm  border-1 border-[#422AD5]">
+                     <i class="fa-solid fa-book-open"></i>Learn</button>
 
-                    <button id="showButton2" class="flex gap-1 items-center hover:bg-[#422AD5]  w-full h-full object-cover
-                    hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm  border-1 border-[#422AD5]">
-                       <i class="fa-solid fa-book-open"></i>Learn</button>
-
-                       <button  class="flex gap-1 justify-center items-center hover:bg-[#422AD5]  w-full h-full object-cover
-                       hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm  border-1 border-[#422AD5]">
-                       <i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+                      <button  class="flex gap-1 justify-center items-center hover:bg-[#422AD5]  w-full h-full object-cover
+                      hover:text-white bg-white text-[#422AD5] font-semibold p-1 rounded-sm  border-1 border-[#422AD5]">
+                      <i class="fa-solid fa-right-from-bracket"></i>Logout</button>
                 
             </div> 
         </nav>
@@ -50,7 +52,7 @@
                 <h1 class="text-3xl font-bold "><span class="text-[#00BCFF]">English</span> is Easy!!</h1>
                 <p>আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
                 <fieldset class="flex flex-col gap-3">
-                    <input id="input1" value="text" type="email" class="input" placeholder="Enter Your Name " />
+                    <input id="input1"  type="email" class="input" placeholder="Enter Your Name " />
                     <input id="input2" type="password" class="input" placeholder="..........." />
                    <button id="showBtn" class="w-1/9 text-white rounded-sm bg-[#422AD5] p-1">Get Start</button>
                   </fieldset>
@@ -69,10 +71,21 @@
          <div id="buttonDiv" class="flex justify-center items-center gap-3 mb-8 ">
 
          </div>
+
+         <!-- spiner -->
+          <div>
+    <div id="spiner" class="hidden">
+      <span class="loading loading-ball loading-xs"></span>
+      <span class="loading loading-ball loading-sm"></span>
+      <span class="loading loading-ball loading-md"></span>
+      <span class="loading loading-ball loading-lg"></span>
+      <span class="loading loading-ball loading-xl"></span>
+    </div>
 <!-- video -->
          <div id="videoDiv" class="grid grid-cols-3 gap-8 bg-[#F8F8F8]">
 
          </div> 
+        </div>
 
          <div id="extraSection" class="bg-[#F8F8F8] text-center space-y-2 p-4">
             <p class="text-sm">আপনি এখনো কোন Lesson Select করেন </p>
@@ -84,7 +97,7 @@
 <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
 <dialog id="modal" class="modal modal-bottom sm:modal-middle">
   <div class="modal-box">
-<div id="totalDtelails" ></div>
+<div id="details" ></div>
     <div class="modal-action">
       <form method="dialog">
         <!-- if there is a button in form, it will close the modal -->
@@ -157,45 +170,33 @@
             </nav>
         </section>
         </footer>
+     
+
         <!-- <script> -->
-           const headerSection= document.getElementById('headerSection');
-           headerSection.style.display="none";
-           const bannerSection= document.getElementById ('bannerSection');
-            const section = document.getElementById("hiddenSection");
-            section.style.display="none";
 
-                document.getElementById("showButton").addEventListener("click", function() {
-                
-                  if (section.style.display === "none") {
-                    section.style.display = "block"; 
-                    section2.style.display="none";
-                    bannerSection.style.display="none";
-                    section.scrollIntoView({ behavior:"smooth"});
-             
-                } 
-                else {
-                    section.style.display = "none"; 
-              
-                }
-            });
+             const headerSection= document.getElementById('headerSection');
+             headerSection.style.display="none";
 
-            const section2 = document.getElementById("hiddenSection2");
-            section2.style.display="none";
+          const section = document.getElementById("hiddenSection");
+const section2 = document.getElementById("hiddenSection2");
 
-            document.getElementById("showButton2").addEventListener("click", function() {
-                
-                if (section2.style.display === "none") {
-                  section2.style.display = "block"; 
-                  section.style.display="none";
-                  bannerSection.style.display="none";
-                  section2.scrollIntoView({ behavior:"smooth"});
-           
-              } 
-              else {
-                  section2.style.display = "none"; 
-            
-              }
-          });
+section.style.display = "none";
+section2.style.display = "none";
+
+document.getElementById("showButton").addEventListener("click", function () {
+        section.style.display = "block"
+        // section2.style.display = "none";
+        section.scrollIntoView({ behavior: "smooth" });
+    
+});
+
+document.getElementById("showButton2").addEventListener("click", function () {
+        section2.style.display = "block";
+        // section.style.display = "none"; 
+        section2.scrollIntoView({ behavior: "smooth" });
+
+});
+
 
         //   form
         document.getElementById("showBtn").addEventListener("click", function () {
@@ -205,7 +206,7 @@
 
 
 
-    if (input1 && convertInput2 === 123456) {
+    if (input1 != "" && convertInput2 === 123456) {
             bannerSection.style.display="none";
             section.style.display="block";
             section2.style.display="block";
@@ -217,7 +218,8 @@
 });
 
 
-        <!-- // </script> -->
+        // </script>
+
          <script src="js/index.js"></script>
 </body>
 </html>
