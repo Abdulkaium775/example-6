@@ -185,7 +185,7 @@ function displayVideoDetails(detail) {
 
   let details = document.getElementById("details");
   details.innerHTML = `
-          <h2>${detail.word} (<i class="fa-solid fa-microphone"></i>):${detail.pronunciation}</h2>
+          <h2>${detail.word} (<i class="fa-solid fa-microphone"></i>:${detail.pronunciation})</h2>
           <p><strong>Meaning:</strong></p>
           <p>${detail.meaning?detail.meaning:"কোনো অর্থ  নাই"}</p>
         
@@ -193,13 +193,13 @@ function displayVideoDetails(detail) {
           <p>${detail.sentence}</p>
    
           <p><strong>সমার্থক শব্দ গুলো:</strong></p>
-          <div class="space-x-2">
+          <div class="mb-5">
              <button>${detail.synonyms[0]?detail.synonyms[0]:" "}</button>
              <button>${detail.synonyms[1]?detail.synonyms[1]:" "}</button>
              <button>${detail.synonyms[2]?detail.synonyms[2]:" "}</button>
           </div>
           </div>
-          <button class="bg-[#422AD5] text-white p-2 rounded-sm">Complete Learning</button>
+          <button class="text-xs bg-[#422AD5] text-white p-1 rounded-sm">Complete Learning</button>
       </div>
     `;
 }
