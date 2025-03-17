@@ -187,7 +187,7 @@ function displayVideoDetails(detail) {
   details.innerHTML = `
           <h2>${detail.word} (<i class="fa-solid fa-microphone"></i>):${detail.pronunciation}</h2>
           <p><strong>Meaning:</strong></p>
-          <p>${detail.meaning}</p>
+          <p>${detail.meaning?detail.meaning:"কোনো অর্থ  নাই"}</p>
         
           <p><strong>Example:</strong></p>
           <p>${detail.sentence}</p>
